@@ -1,0 +1,82 @@
+:root {
+  --bg-body: #9B4DCA;
+  --bg-footer: #fff;
+  --bg-main: #fff;
+  --header-color: #fff;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  background: var(--bg-body, white);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-areas: "header header header"
+  ". survey ."
+  "footer footer footer";
+}
+
+.center-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-left {
+  margin-left: 15px;
+}
+
+.align-left-h {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header {
+  grid-area: header;
+  padding: 2rem 0;
+}
+header h1 {
+  margin: 0;
+  color: var(--header-color, white);
+}
+
+footer {
+  grid-area: footer;
+  background: var(--bg-footer, white);
+  margin: 0;
+  margin-top: 2rem;
+}
+footer>p {
+  margin: 1rem 0;
+}
+main {
+  grid-area: survey;
+  background: var(--bg-main, white);
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+
+input[type=number] {
+  text-align: right;
+}
+.cb-product-other>label>input[type=checkbox]:checked+textarea {
+  display: inline-block;
+  visibility: visible;
+}
+.cb-product-other>label>input[type=checkbox]:not(:checked)+textarea {
+  display: none;
+  visibility: hidden;
+}
+
+@media (max-width: 40.0rem) {
+  body {
+    grid-template-areas: "header header header" "survey survey survey" "footer footer footer";
+  }
+}
+
+@media (max-width: 48.0rem) {
+  body {
+    grid-template-columns: 10% 1fr 10%;
+  }
+}

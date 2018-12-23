@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Milligram-->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <!--My style-->
+  <link rel="stylesheet" href="style.css">
+  <title>Survey Form</title>
+</head>
+
+<body>
+  <header class="center-h">
+    <h1 id="title">Bees monitoring</h1>
+  </header>
+
+  <main>
+    <p class="center-h" id="description">This survey is&ensp;<em>only</em>&ensp;for beekepers.</p>
+    <form id="survey-form" action="">
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" placeholder="Full name" required>
+      <label for="email" id="email-label">eMail:</label>
+      <input type="email" name="email" id="email" placeholder="The one you use the most" required>
+      <label for="dropdown" id="dropdown-label">
+        What is beekeping for you?</label>
+      <select name="dropdown" id="dropdown">
+        <option value="full-time">Full-time job</option>
+        <option value="part-time">Part-time job</option>
+        <option value="hobby">Just a hobby</option>
+      </select>
+      <label for="number" id="number-label">How many hives do you have?</label>
+      <!--//TODO: pensar en eliminar el placeholder-->
+      <input type="number" name="number-hives" id="number" min="1" max="2000000" placeholder="0" required>
+      <fieldset>
+        <legend>How often do you visit your hives?</legend>
+        <div class="mg-left">
+          <label for="every-week">
+            <input type="radio" name="times" id="every-week" value="every-week"> Every week</label>
+          <label for="every-two-weeks">
+            <input type="radio" name="times" id="every-two-weeks" value="every-two-week"> Every two weeks</label>
+          <label for="every-month">
+            <input type="radio" name="times" id="every-month" value="every-month"> Every month</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Do your hives get sick?</legend>
+        <div class="mg-left">
+          <label for="yes">
+            <input type="radio" name="rb-get-sick" id="yes" value="yes"> Yes
+          </label>
+          <label for="no">
+            <input type="radio" name="rb-get-sick" id="no" value="no"> No
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>What products do you produce?</legend>
+        <div class="mg-left">
+          <label for="honey">
+            <input type="checkbox" name="cb-product" id="honey" value="honey"> Honey
+          </label>
+          <label for="pollen">
+            <input type="checkbox" name="cb-product" id="pollen" value="pollen"> Pollen
+          </label>
+          <label for="royal-jelly">
+            <input type="checkbox" name="cb-product" id="royal-jelly" value="royal-jelly"> Royal Jelly
+          </label>
+          <label for="wax">
+            <input type="checkbox" name="cb-product" id="wax" value="wax"> Wax
+          </label>
+          <div class="cb-product-other">
+            <label for="other">
+              <input type="checkbox" name="cb-product" id="other" value="other"> Other
+              <textarea name="other-product" id="other-product" cols="30" rows="1" placeholder="What is it?"></textarea>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="align-left-h">
+        <button id="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="center-h">
+    <p>Coded by <a href="https://github.com/ValentinTapiaTorti" target="_blank"> Valentin TT</a>.</p>
+  </footer>
+
+</body>
+
+</html>
